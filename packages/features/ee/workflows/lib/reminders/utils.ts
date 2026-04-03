@@ -64,6 +64,7 @@ export const getSMSMessageWithVariables = async (
     attendeeTimezone: evt.attendees[0].timeZone,
     eventTimeInAttendeeTimezone: dayjs(evt.startTime).tz(evt.attendees[0].timeZone),
     eventEndTimeInAttendeeTimezone: dayjs(evt.endTime).tz(evt.attendees[0].timeZone),
+    organizerCompany: evt.team?.name || "",
   };
 
   const locale =

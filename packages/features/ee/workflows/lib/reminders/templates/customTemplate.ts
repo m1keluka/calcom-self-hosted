@@ -112,6 +112,7 @@ export type VariablesType = {
   rescheduleReason?: string | null;
   ratingUrl?: string;
   noShowUrl?: string;
+  organizerCompany?: string;
   attendeeTimezone?: string;
   eventTimeInAttendeeTimezone?: Dayjs;
   eventEndTimeInAttendeeTimezone?: Dayjs;
@@ -187,6 +188,7 @@ const customTemplate = (
     .replaceAll("{RESCHEDULE_REASON}", variables.rescheduleReason || "")
     .replaceAll("{MEETING_URL}", variables.meetingUrl || "")
     .replaceAll("{RATING_URL}", variables.ratingUrl || "")
+    .replaceAll("{ORGANIZER_COMPANY}", variables.organizerCompany || "")
     .replaceAll("{NO_SHOW_URL}", variables.noShowUrl || "")
     .replaceAll("{ATTENDEE_TIMEZONE}", variables.attendeeTimezone || "")
     .replaceAll(
