@@ -54,15 +54,11 @@ const LandingPage = async () => {
           </div>
 
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
-            Private Scheduling
-            <br />
-            <span className="text-white/40">Infrastructure</span>
+            Private Scheduling <span className="text-white/40">Infrastructure</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/50 md:text-lg">
-            Secure appointment scheduling for financial services firms.
-            <br className="hidden sm:block" />
-            Powered by Axia Growth.
+            Secure appointment scheduling for financial services firms. Powered by Axia Growth.
           </p>
 
           <div className="mt-10">
