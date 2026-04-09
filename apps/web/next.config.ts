@@ -266,6 +266,10 @@ const nextConfig = (phase: string): NextConfig => {
       const { orgSlug } = nextJsOrgRewriteConfig;
       const beforeFiles = [
         {
+          source: "/.well-known/microsoft-identity-association.json",
+          destination: "/api/well-known/microsoft-identity",
+        },
+        {
           source: `/(${locales.join("|")})/:path*`,
           destination: "/:path*",
         },
