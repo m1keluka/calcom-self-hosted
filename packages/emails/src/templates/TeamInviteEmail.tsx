@@ -35,18 +35,16 @@ export const TeamInviteEmail = (
       </p>
       <img
         style={{
-          borderRadius: "16px",
-          height: "270px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          height: "40px",
+          display: "block",
+          margin: "0 auto 16px",
         }}
         src={
           IS_PRODUCTION
-            ? `${WEBAPP_URL}/emails/calendar-email-hero.png`
-            : "http://localhost:3000/emails/calendar-email-hero.png"
+            ? `${WEBAPP_URL}/axia-logo.svg`
+            : "http://localhost:3000/axia-logo.svg"
         }
-        alt=""
+        alt="Axia Scheduling"
       />
       <p
         style={{
@@ -98,7 +96,7 @@ export const TeamInviteEmail = (
         <p style={{ fontWeight: 400, margin: 0 }}>
           <>
             {props.language("have_any_questions")}{" "}
-            <a href="mailto:support@cal.com" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
+            <a href="mailto:support@axiagrowth.com" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
               <>{props.language("contact")}</>
             </a>{" "}
             {props.language("our_support_team")}
@@ -219,8 +217,7 @@ export const TeamInviteEmail = (
               values={{ teamName, invitedBy, appName: APP_NAME }}
             />
           )}{" "}
-          {appName} is the event-juggling scheduler that enables you and your team to schedule meetings
-          without the email tennis.
+          Connect your calendar, set your availability, and start accepting appointments.
         </>
       );
     }
@@ -241,8 +238,7 @@ export const TeamInviteEmail = (
               values={{ teamName, parentTeamName: parentTeamName ?? "", invitedBy, appName: APP_NAME }}
             />
           )}{" "}
-          {appName} is the event-juggling scheduler that enables you and your team to schedule meetings
-          without the email tennis.
+          Connect your calendar, set your availability, and start accepting appointments.
         </>
       );
     }
