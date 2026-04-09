@@ -68,9 +68,9 @@ export const metadata = {
     "application-TileColor": "#ff0000",
   },
   twitter: {
-    site: "@calcom",
-    creator: "@calcom",
-    card: "summary_large_image",
+    site: "@axiagrowth",
+    creator: "@axiagrowth",
+    card: "summary",
   },
   robots: {
     index: true,

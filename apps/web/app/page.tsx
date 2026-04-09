@@ -11,6 +11,30 @@ export const metadata = {
   title: "Axia Scheduling — Private Scheduling Infrastructure",
   description:
     "Secure appointment scheduling for financial services firms. Powered by Axia Growth.",
+  openGraph: {
+    title: "Axia Scheduling — Private Scheduling Infrastructure",
+    description:
+      "Secure appointment scheduling for financial services firms. Powered by Axia Growth.",
+    url: "https://axiascheduling.com",
+    siteName: "Axia Scheduling",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://axiascheduling.com/axia-logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Axia Scheduling",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Axia Scheduling — Private Scheduling Infrastructure",
+    description:
+      "Secure appointment scheduling for financial services firms. Powered by Axia Growth.",
+    images: ["https://axiascheduling.com/axia-logo.svg"],
+  },
 };
 
 const LandingPage = async () => {
@@ -91,6 +115,12 @@ const LandingPage = async () => {
             &copy; {new Date().getFullYear()} Axia Growth. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
+            <Link href="/privacy" className="text-xs text-white/25 transition-colors hover:text-white/50">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-xs text-white/25 transition-colors hover:text-white/50">
+              Terms of Service
+            </Link>
             <a
               href="https://axiagrowth.com"
               target="_blank"
