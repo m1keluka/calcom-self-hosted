@@ -255,22 +255,8 @@ export async function authorizeCredentials(
 
   // authentication success- but does it meet the minimum password requirements?
   const validateRole = (role: UserPermissionRole) => {
-    // User's role is not "ADMIN"
-    if (role !== UserPermissionRole.ADMIN) return role;
-    // User's identity provider is not "CAL"
-    if (user.identityProvider !== IdentityProvider.CAL) return role;
-
-    if (process.env.NEXT_PUBLIC_IS_E2E) {
-      console.warn("E2E testing is enabled, skipping password and 2FA requirements for Admin");
-      return role;
-    }
-
-    // User's password is valid and two-factor authentication is enabled
-    if (isPasswordValid(credentials.password, false, true) && user.twoFactorEnabled) return role;
-    // Code is running in a development environment
-    if (isENVDev) return role;
-    // By this point it is an ADMIN without valid security conditions
-    return "INACTIVE_ADMIN";
+    // Self-hosted: skip password length and 2FA requirements for admin
+    return role;
   };
 
   const role = validateRole(user.role);
