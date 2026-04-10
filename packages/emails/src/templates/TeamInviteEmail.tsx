@@ -41,8 +41,8 @@ export const TeamInviteEmail = (
         }}
         src={
           IS_PRODUCTION
-            ? `${WEBAPP_URL}/axia-logo.svg`
-            : "http://localhost:3000/axia-logo.svg"
+            ? `${WEBAPP_URL}/emails/logo.png`
+            : "http://localhost:3000/emails/logo.png"
         }
         alt="Axia Scheduling"
       />
@@ -65,42 +65,12 @@ export const TeamInviteEmail = (
           endIconName="linkIcon"
         />
       </div>
-      <p
-        style={{
-          fontWeight: 400,
-          lineHeight: "24px",
-          marginBottom: "32px",
-          marginTop: "48px",
-          lineHeightStep: "24px",
-        }}
-      />
-
-      <div className="">
-        <p
-          style={{
-            fontWeight: 400,
-            lineHeight: "24px",
-            marginBottom: "32px",
-            marginTop: "32px",
-            lineHeightStep: "24px",
-          }}>
-          <>
-            {props.language("email_no_user_signoff", {
-              appName: APP_NAME,
-            })}
-          </>
-        </p>
-      </div>
-
-      <div style={{ borderTop: "1px solid #E1E1E1", marginTop: "32px", paddingTop: "32px" }}>
-        <p style={{ fontWeight: 400, margin: 0 }}>
-          <>
-            {props.language("have_any_questions")}{" "}
-            <a href="mailto:support@axiagrowth.com" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
-              <>{props.language("contact")}</>
-            </a>{" "}
-            {props.language("our_support_team")}
-          </>
+      <div style={{ borderTop: "1px solid #E1E1E1", marginTop: "48px", paddingTop: "24px" }}>
+        <p style={{ fontWeight: 400, margin: 0, color: "#6B7280", fontSize: "14px" }}>
+          Questions? Reach us at{" "}
+          <a href="mailto:support@axiagrowth.com" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
+            support@axiagrowth.com
+          </a>
         </p>
       </div>
     </V2BaseEmailHtml>
@@ -216,8 +186,7 @@ export const TeamInviteEmail = (
               i18nKey="email_team_invite|content|invited_to_org"
               values={{ teamName, invitedBy, appName: APP_NAME }}
             />
-          )}{" "}
-          Connect your calendar, set your availability, and start accepting appointments.
+          )}
         </>
       );
     }
@@ -237,8 +206,7 @@ export const TeamInviteEmail = (
               i18nKey="email_team_invite|content|invited_to_subteam"
               values={{ teamName, parentTeamName: parentTeamName ?? "", invitedBy, appName: APP_NAME }}
             />
-          )}{" "}
-          Connect your calendar, set your availability, and start accepting appointments.
+          )}
         </>
       );
     }
