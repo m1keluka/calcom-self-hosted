@@ -262,23 +262,6 @@ export async function authorizeCredentials(
   const role = validateRole(user.role);
   const baseUser = AdapterUserPresenter.fromCalUser(user, role, hasActiveTeams);
 
-  if (role === "INACTIVE_ADMIN") {
-    const passwordValid = isPasswordValid(credentials.password, false, true);
-    const has2FA = user.twoFactorEnabled;
-
-    let reason: "both" | "password" | "2fa";
-
-    if (!passwordValid && !has2FA) {
-      reason = "both";
-    } else if (!passwordValid) {
-      reason = "password";
-    } else {
-      reason = "2fa";
-    }
-
-    return { ...baseUser, inactiveAdminReason: reason };
-  }
-
   return baseUser;
 }
 
