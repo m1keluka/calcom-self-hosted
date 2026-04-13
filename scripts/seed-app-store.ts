@@ -69,13 +69,16 @@ async function createApp(
       // We know that the app exists, so either it would have the same slug or dirName
       // Because update query can't have both slug and dirName, try to find the app to update by slug and dirName one by one
       // if there would have been a unique App.uuid, that never changes, we could have used that in update query.
+      // Preserve the existing `enabled` value — admins disable apps via the DB and we don't want
+      // every deploy to re-enable them.
+      const { enabled: _seedEnabled, ...dataWithoutEnabled } = data;
       await prisma.app.update({
         where: { slug: foundApp.slug },
-        data,
+        data: dataWithoutEnabled,
       });
       await prisma.app.update({
         where: { dirName: foundApp.dirName },
-        data,
+        data: dataWithoutEnabled,
       });
       console.log(`📲 Updated ${isTemplate ? "template" : "app"}: '${slug}'`);
     }
